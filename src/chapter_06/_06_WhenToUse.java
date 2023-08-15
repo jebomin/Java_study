@@ -1,6 +1,10 @@
 package chapter_06;
 
 public class _06_WhenToUse {
+    public static int getPower(int number) { // "4"(정수가 아니라 문자열 형태로 받음)
+        return getPower(number, 2);
+    }
+
     public static int getPower(int number, int exponent) {
         int result = 1;
         for (int i = 0; i < exponent; i++) {
