@@ -47,4 +47,15 @@ public class Blackbox {
     void record() {
         record(true, true, 5);
     }
+
+    static void callServiceCenter() {
+        System.out.println("서비스 센터(1588-0000)로 연결합니다.");
+        //modelName = "test"; -> 안됨
+        //canAutoReport = false; -> 됨
+        //staic으로 선언한 클래스 변수는 static 메소드 안에서 사용 가능
+        //modelName과 같은 인스턴스 변수는 객체가 만들어져야 생기는 변수이기 때문에 static 안에서 직접 접근이 불가
+        //메소드 내에서 인스턴스 변수의 사용이 필요 없는 경우에 공통적으로 적용되는 기능(클래스 메소드)를 사용할 수 있음
+        //일반적으로 만드는 메소드는 인스턴스 메소드 -> 각 객체마다 다른 동작
+        //static 키워드가 붙은 건 클래스 메소드 -> 객체가 만들어지지 않아도 '클래스이름.어쩌고'로 접근 가능
+    }
 }
