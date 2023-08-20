@@ -1,6 +1,6 @@
 package chapter_08;
 
-import chapter_07.BlackBoxRefurbish;
+import chapter_07.*;
 
 public class _00_AccessModifierTest {
     public static void main(String[] args) {
@@ -9,5 +9,7 @@ public class _00_AccessModifierTest {
         //b1.resolution = "FHD"; //default
         //b1.price - 200000; //private
         //b1.color = "블랙"; //protected
+
+        Blackbox b2;
     }
 }
