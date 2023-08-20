@@ -58,4 +58,9 @@ public class Blackbox {
         //일반적으로 만드는 메소드는 인스턴스 메소드 -> 각 객체마다 다른 동작
         //static 키워드가 붙은 건 클래스 메소드 -> 객체가 만들어지지 않아도 '클래스이름.어쩌고'로 접근 가능
     }
+
+    void appendModelName(String modelName) { //String s -> 이러면 안 붙여도됨!
+        this.modelName += modelName; //인스턴스 변수와 전달받은 파라미터 변수의 이름이 같으면 this를 붙여야함
+        //modelName += s; -> 이러면 안 붙여도됨!
+    }
 }
