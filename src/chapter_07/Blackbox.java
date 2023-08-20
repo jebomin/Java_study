@@ -13,18 +13,18 @@ public class Blackbox {
     static boolean canAutoReport = false; //자동신고기능(아직은 개발 안된 상태)
 
     Blackbox() {
-        System.out.println("기본 생성자 호출");
-        this.serialNumber = ++counter;
-        System.out.println("새로운 시리얼 넘버를 발급 받았습니다 : "+this.serialNumber);
+//        System.out.println("기본 생성자 호출");
+//        this.serialNumber = ++counter;
+//        System.out.println("새로운 시리얼 넘버를 발급 받았습니다 : "+this.serialNumber);
     }
 
     Blackbox(String modelName, String resolution, int price, String color) {
-        this(); //기본 생성자 동작을 하고 아래쪽 동작을 수행(기본 생성자 호출)
-        System.out.println("사용자 정의 생성자 호출");
-        this.modelName = modelName;
-        this.resolution = resolution;
-        this.price = price;
-        this.color = color;
+//        this(); //기본 생성자 동작을 하고 아래쪽 동작을 수행(기본 생성자 호출)
+//        System.out.println("사용자 정의 생성자 호출");
+//        this.modelName = modelName;
+//        this.resolution = resolution;
+//        this.price = price;
+//        this.color = color;
     }
 
     void autoReport() {
@@ -81,5 +81,48 @@ public class Blackbox {
     void appendModelName(String modelName) { //String s -> 이러면 안 붙여도됨!
         this.modelName += modelName; //인스턴스 변수와 전달받은 파라미터 변수의 이름이 같으면 this를 붙여야함
         //modelName += s; -> 이러면 안 붙여도됨!
+    }
+
+    //Getter&Setter
+    //Getter : 값을 가지고 오는 메소드
+    String getModelName() {
+        return modelName;
+    }
+
+    //Setter : 값을 설정하는 메소드
+    void setModelName(String modelName) {
+        this.modelName = modelName;
+    }
+
+    String getResolution() {
+        if (resolution == null || resolution.isEmpty()) {
+            return "판매자에게 문의하세요.";
+        }
+        return resolution;
+    }
+
+    void setResolution(String resolution) {
+        this.resolution = resolution;
+    }
+
+    int getPrice() {
+        return price;
+    }
+
+    void setPrice(int price) {
+        if(price<100000) {
+            this.price = 100000;
+        }
+        else {
+            this.price = price;
+        }
+    }
+
+    String getColor() {
+        return color;
+    }
+
+    void setColor(String color) {
+        this.color = color;
     }
 }
