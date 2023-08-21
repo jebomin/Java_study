@@ -1,5 +1,7 @@
 package chapter_07.camera;
 
+//상속은 IS-A 관계
+//SpeedCam is a Camera.(IS-A)
 public class SpeedCam extends Camera { //자식 클래스
 
     public SpeedCam() {
