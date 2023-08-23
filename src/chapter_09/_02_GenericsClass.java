@@ -1,9 +1,8 @@
 package chapter_09;
 
-import chapter_09.coffee.Coffee;
-import chapter_09.coffee.CoffeeByName;
-import chapter_09.coffee.CoffeeByNickname;
-import chapter_09.coffee.CoffeeByNumber;
+import chapter_09.coffee.*;
+import chapter_09.user.User;
+import chapter_09.user.VIPUser;
 
 public class _02_GenericsClass {
     public static void main(String[] args) {
@@ -46,5 +45,12 @@ public class _02_GenericsClass {
         System.out.println("주문 고객 이름 : " + c6Name);
 
         //장점 : 코드 중복 없앰, 값을 가지고 올 때 형변환 안해도 됨 -> 개발상의 실수 없(
+        System.out.println("-------------------------");
+        CoffeeByUser<User> c7 = new CoffeeByUser<>(new User("방동혁"));
+        c7.ready();
+
+        CoffeeByUser<VIPUser> c8 = new CoffeeByUser<>(new VIPUser("제주성"));
+        c8.ready();
     }
 }
+
