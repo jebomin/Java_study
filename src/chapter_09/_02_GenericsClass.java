@@ -1,5 +1,6 @@
 package chapter_09;
 
+import chapter_09.coffee.Coffee;
 import chapter_09.coffee.CoffeeByName;
 import chapter_09.coffee.CoffeeByNickname;
 import chapter_09.coffee.CoffeeByNumber;
@@ -32,5 +33,18 @@ public class _02_GenericsClass {
         System.out.println("-------------------------");
 
         //c4Name = (String) c3.name;
+
+        Coffee<Integer> c5 = new Coffee<>(33);
+        c5.ready();
+        //위와 달리 형변환 하지 않아도 됨
+        int c5Name = c5.name;
+        System.out.println("주문 고객 번호 : " + c5Name);
+
+        Coffee<String> c6 = new Coffee<>("페티");
+        c6.ready();
+        String c6Name = c6.name;
+        System.out.println("주문 고객 이름 : " + c6Name);
+
+        //장점 : 코드 중복 없앰, 값을 가지고 올 때 형변환 안해도 됨 -> 개발상의 실수 없(
     }
 }
