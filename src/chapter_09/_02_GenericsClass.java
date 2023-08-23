@@ -51,6 +51,22 @@ public class _02_GenericsClass {
 
         CoffeeByUser<VIPUser> c8 = new CoffeeByUser<>(new VIPUser("제주성"));
         c8.ready();
+
+        System.out.println("-------------------------");
+        orderCoffee("쪄누콩");
+        orderCoffee(18);
+
+        orderCoffee("황지호", "아메리카노");
+        orderCoffee(23, "라떼");
+    }
+
+    //하나의 값이 아니라 여러개의 값을 전달
+    public static <T> void orderCoffee(T name) {
+        System.out.println("커피 준비 완료 : " +name);
+    }
+
+    public static <T, V> void orderCoffee(T name, V coffee) {
+        System.out.println(coffee+ " 준비 완료 : " + name);
     }
 }
 
