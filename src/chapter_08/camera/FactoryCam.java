@@ -1,16 +1,32 @@
 package chapter_08.camera;
 
-public class FactoryCam extends Camera{
+import chapter_08.detector.Detectable;
+import chapter_08.reporter.Reportable;
+
+public class FactoryCam extends Camera implements Detectable, Reportable {
+    private Detectable detector;
+    private Reportable reporter;
+
+    public void setDetector(Detectable detector) {
+        detector.detect();
+    }
+
+    public void setReporter(Reportable reporter) {
+        reporter.report();
+    }
+
     @Override
     public void showMainFeature() {
         System.out.println("화재 감지");
     }
 
+    @Override
     public void detect() {
-        System.out.println("화재를 감지합니다.");
+
     }
 
+    @Override
     public void report() {
-        System.out.println("화재 신고를 진행합니다.");
+
     }
 }
