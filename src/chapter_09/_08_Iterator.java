@@ -1,9 +1,6 @@
 package chapter_09;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 public class _08_Iterator {
     public static void main(String[] args) {
@@ -52,6 +49,40 @@ public class _08_Iterator {
         it = list.iterator(); //커서 처음 위치로 이동
         while (it.hasNext()) {
             System.out.println(it.next());
+        }
+        System.out.println("-------------------------------");
+
+        //hashset iterator 사용
+        HashSet<String> set = new HashSet<>();
+        set.add("유재석");
+        set.add("박명수");
+        Iterator<String> itSet = set.iterator();
+        while (itSet.hasNext()) {
+            System.out.println(itSet.next());
+        }
+        System.out.println("-------------------------------");
+
+        //hashmap iterator 사용
+        HashMap<String, Integer> map = new HashMap<>();
+        map.put("유재석", 10);
+        map.put("박명수", 5);
+
+        //map.iterator() -> map에는 key와 value 두 개가 있어 어떤게 적용될지 몰라서 이 기능은 제공되지 않음
+        Iterator<String> itMapKey = map.keySet().iterator();
+        while (itMapKey.hasNext()) {
+            System.out.println(itMapKey.next());
+        }
+        System.out.println("-------------------------------");
+
+        Iterator<Integer> itMapValue = map.values().iterator();
+        while (itMapValue.hasNext()) {
+            System.out.println(itMapValue.next());
+        }
+        System.out.println("-------------------------------");
+
+        Iterator<Map.Entry<String, Integer>> itMap = map.entrySet().iterator();
+        while (itMap.hasNext()) {
+            System.out.println(itMap.next());
         }
         System.out.println("-------------------------------");
     }
